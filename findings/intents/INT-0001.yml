@@ -1,0 +1,6 @@
+uid: INT-0001
+type: intent
+status: approved
+title: "A finding is displayed too"
+text: "The sentence a tool writes about a graph is shown to a reader exactly as an author's own words are, and it carries whatever the graph put into it."
+normative: false

@@ -1,0 +1,50 @@
+[project]
+name = "Hostile fixture — findings <img src=x data-injected onerror=\"document.documentElement.dataset.smokePwned='findings-project'\"> & </p>"
+format_version = 3
+
+# A deliberately UNSOUND intent graph. The graph above is sound so that a red run
+# means the encoding failed; this one is unsound on purpose, because a finding is
+# a third kind of text a reader is shown and it is assembled by the tools rather
+# than copied from a field. A finding names the thing it is about, so a link
+# whose target is hostile puts hostile characters into a sentence the reader's
+# browser is asked to display, by a path that no assertion against titles, text
+# or attributes covers.
+#
+# No source is declared here. The addresses are the sound graph's business.
+
+[grounding]
+root_types = ["intent"]
+delivery_roots = ["intent"]
+ground_link_types = ["implements"]
+
+[types.intent]
+attrs.note = { required = false }
+
+[types.system_requirement]
+attrs.note = { required = false }
+
+[links]
+types = ["implements", "relates"]
+
+[link_rules]
+implements = { from = ["system_requirement"], to = ["intent"] }
+relates = { from = ["system_requirement"], to = ["system_requirement"] }
+
+[status]
+values = ["proposed", "draft", "approved", "ratified", "suspect", "rejected", "deleted"]
+
+[status.roles]
+initial = "draft"
+proposed = "proposed"
+ratified = "ratified"
+invalidated = "rejected"
+suspect = "suspect"
+tombstone = "deleted"
+
+[transitions]
+proposed = ["draft", "approved", "ratified", "suspect", "rejected", "deleted"]
+draft = ["approved", "suspect", "rejected", "deleted"]
+approved = ["ratified", "suspect", "rejected", "deleted"]
+ratified = ["suspect", "rejected", "deleted"]
+suspect = ["approved", "ratified", "rejected", "deleted"]
+rejected = ["draft", "deleted"]

@@ -1,0 +1,6 @@
+uid: INT-0001
+type: intent
+status: approved
+title: "Nothing in this graph is ever shown to a reader"
+text: "An application that refuses this graph's declared source address stops before it renders anything, so these words exist only to make the graph sound."
+normative: false

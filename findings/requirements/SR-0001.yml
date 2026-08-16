@@ -1,0 +1,9 @@
+uid: SR-0001
+type: system_requirement
+status: approved
+title: "This requirement points at nothing, on purpose"
+text: "The link below names a target that does not exist, so the tools write a finding that quotes the name. The name is the payload. It carries no slash, because a target containing one is an external reference the core deliberately leaves opaque, and an opaque target produces no finding to quote it in."
+normative: true
+links:
+- target: "INT-0002<img src=x data-injected onerror=\"document.documentElement.dataset.smokePwned='finding'\">"
+  type: implements

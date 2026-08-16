@@ -1,0 +1,10 @@
+uid: SR-0001
+type: system_requirement
+status: approved
+title: "The address is refused, not rendered"
+text: "A declared source address is resolved into a repository while the graph is being staged. An address naming a scheme the browser executes is not a repository, so staging fails and the graph does not open."
+rationale: "A guard that turns an unsafe address into displayed text protects the page that displays it. This graph tests the earlier claim: that such an address never reaches that page at all."
+normative: true
+links:
+- target: INT-0001
+  type: implements

@@ -1,0 +1,12 @@
+uid: SR-0001
+type: system_requirement
+status: approved
+title: "Every field carries the characters </h1><img src=x data-injected onerror=\"document.documentElement.dataset.smokePwned='title'\">"
+text: "The body of a requirement is repository content like any other. <img src=x data-injected onerror=\"document.documentElement.dataset.smokePwned='text'\"><b data-injected>markup</b> & 'apostrophe' </p> javascript:document.documentElement.dataset.smokePwned='text-scheme'"
+rationale: "The reason is repository content too. <img src=x data-injected onerror=\"document.documentElement.dataset.smokePwned='rationale'\"> data:text/html,<script data-injected>document.documentElement.dataset.smokePwned='rationale-data'</script>"
+normative: true
+links:
+- target: INT-0001
+  type: implements
+attrs:
+  note: "javascript:document.documentElement.dataset.smokePwned='attr'"

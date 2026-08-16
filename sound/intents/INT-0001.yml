@@ -1,0 +1,8 @@
+uid: INT-0001
+type: intent
+status: approved
+title: "Hostile content is displayed, never obeyed </h1><img src=x data-injected onerror=\"document.documentElement.dataset.smokePwned='intent-title'\">"
+text: "A reader opens a repository somebody else wrote. <img src=x data-injected onerror=\"document.documentElement.dataset.smokePwned='intent-text'\"><b data-injected>markup</b> & 'apostrophe' </p> javascript:document.documentElement.dataset.smokePwned='intent-text-scheme'"
+normative: false
+attrs:
+  note: "<svg data-injected onload=\"document.documentElement.dataset.smokePwned='intent-attr'\"></svg>"

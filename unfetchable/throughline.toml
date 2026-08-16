@@ -1,0 +1,55 @@
+[project]
+name = "Hostile fixture — unfetchable source"
+format_version = 3
+
+# This graph is refused before it opens, and that is the whole of its content.
+#
+# The address below names a scheme a browser executes rather than fetches. A
+# reader's application resolves declared sources into repositories while it is
+# staging the graph, so this address is parsed as a repository before any page
+# that could render it as a link exists — and parsing fails. Nothing here is
+# ever displayed: not this project name, not the item, not a verdict, not the
+# address itself as a link. The refusal is the observable behaviour.
+#
+# The graph is otherwise sound so that a refusal can only be read one way. If
+# the items were broken, an application that opened the graph and then reported
+# errors would be indistinguishable from one that refused the address, and the
+# test could not tell them apart.
+
+[grounding]
+root_types = ["intent"]
+delivery_roots = ["intent"]
+ground_link_types = ["implements"]
+
+[links]
+types = ["implements"]
+
+[link_rules]
+implements = { from = ["system_requirement"], to = ["intent"] }
+
+# The declared source is the point of this graph. No item references it: a
+# reference would make the graph unresolvable on its own terms and give a second
+# reason to stop, and one reason is what this fixture is for.
+[[sources]]
+namespace = "executed"
+url = "javascript:document.documentElement.dataset.smokePwned='source-url'"
+ref = "v1"
+
+[status]
+values = ["proposed", "draft", "approved", "ratified", "suspect", "rejected", "deleted"]
+
+[status.roles]
+initial = "draft"
+proposed = "proposed"
+ratified = "ratified"
+invalidated = "rejected"
+suspect = "suspect"
+tombstone = "deleted"
+
+[transitions]
+proposed = ["draft", "approved", "ratified", "suspect", "rejected", "deleted"]
+draft = ["approved", "suspect", "rejected", "deleted"]
+approved = ["ratified", "suspect", "rejected", "deleted"]
+ratified = ["suspect", "rejected", "deleted"]
+suspect = ["approved", "ratified", "rejected", "deleted"]
+rejected = ["draft", "deleted"]

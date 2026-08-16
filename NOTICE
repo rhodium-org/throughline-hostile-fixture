@@ -1,0 +1,22 @@
+throughline-hostile-fixture
+Copyright 2026 Henry J Grech-Cini
+
+This product includes work developed by Dr Henry J Grech-Cini.
+
+Licensed under the Apache License, Version 2.0. See the LICENSE file for the
+full terms.
+
+This repository is a TEST FIXTURE. Its intent graphs deliberately carry, in the
+fields an application displays, characters that close an HTML element, open one,
+or name a URL scheme a browser executes. They exist so that a test can prove an
+application shows repository content as characters rather than acting on it.
+
+Nothing here attacks anybody or anything. The payloads set one sentinel —
+`document.documentElement.dataset.smokePwned` — on the document that executed
+them, and do nothing else: no network request, no storage, no navigation. The
+sentinel exists so a test can tell "the browser executed this" apart from "the
+browser displayed the words of it", a distinction that searching for the
+payload's own text cannot make.
+
+Do not compose these graphs into a real project. They are inputs to a test, not
+guidance for anything.
