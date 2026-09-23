@@ -6,7 +6,7 @@ format_version = 3
 #
 # Every field a reader's browser will be asked to display carries characters
 # that close an element, open one, or name a scheme a browser executes. The
-# graph is sound under `tl-compose check --strict` all the same, which is the
+# graph is sound under `tl check --strict` all the same, which is the
 # whole point: a test that asserts the content is displayed rather than obeyed
 # needs the graph around it to be beyond reproach, so that a red run means the
 # encoding failed and never that the fixture did.

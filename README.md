@@ -35,7 +35,7 @@ application at its own directory.
 
 ### `sound/` — content is displayed, never obeyed
 
-A graph that is **valid under `tl-compose check --strict`** and hostile in every field a
+A graph that is **valid under `tl check --strict`** and hostile in every field a
 reader is shown: the project name, an intent's title and text, a requirement's title,
 text and rationale, and both items' attribute values. The soundness is the point — a red
 run must mean the encoding failed, and never that the fixture did.
