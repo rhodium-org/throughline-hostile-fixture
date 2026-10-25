@@ -1,6 +1,6 @@
 [project]
 name = "Hostile fixture — sound <img src=x data-injected onerror=\"document.documentElement.dataset.smokePwned=1\"> & </p>"
-format_version = 3
+format_version = 4
 
 # A deliberately hostile intent graph that is nonetheless VALID.
 #

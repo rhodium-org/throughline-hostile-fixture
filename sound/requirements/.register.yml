@@ -1,3 +1,4 @@
 prefix: SR
 digits: 4
 title: Rules
+type: system_requirement

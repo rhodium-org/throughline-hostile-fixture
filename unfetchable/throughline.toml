@@ -1,6 +1,6 @@
 [project]
 name = "Hostile fixture — unfetchable source"
-format_version = 3
+format_version = 4
 
 # This graph is refused before it opens, and that is the whole of its content.
 #
