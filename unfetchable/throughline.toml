@@ -36,10 +36,13 @@ url = "javascript:document.documentElement.dataset.smokePwned='source-url'"
 ref = "v1"
 
 [status]
-values = ["proposed", "draft", "approved", "ratified", "suspect", "rejected", "deleted"]
+# Retired by `tl migrate` (SR-0313): draft, approved stood between proposal and
+# signature. Every item is born proposed and counts only once a person signs it
+# (UR-0046).
+values = ["proposed", "ratified", "suspect", "rejected", "deleted"]
 
 [status.roles]
-initial = "draft"
+initial = "proposed"
 proposed = "proposed"
 ratified = "ratified"
 invalidated = "rejected"
@@ -47,9 +50,7 @@ suspect = "suspect"
 tombstone = "deleted"
 
 [transitions]
-proposed = ["draft", "approved", "ratified", "suspect", "rejected", "deleted"]
-draft = ["approved", "suspect", "rejected", "deleted"]
-approved = ["ratified", "suspect", "rejected", "deleted"]
+proposed = ["ratified", "suspect", "rejected", "deleted"]
 ratified = ["suspect", "rejected", "deleted"]
-suspect = ["approved", "ratified", "rejected", "deleted"]
-rejected = ["draft", "deleted"]
+suspect = ["proposed", "ratified", "rejected", "deleted"]
+rejected = ["proposed", "deleted"]
